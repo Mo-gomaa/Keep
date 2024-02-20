@@ -7,7 +7,7 @@ export function loadMain(elementId) {
       loadNotes();
       break;
     case "Edit-labels":
-      loadEditLabels();
+      loadEditLabels(true);
       break;
     default:
       loadNotes();

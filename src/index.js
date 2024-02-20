@@ -2,9 +2,11 @@ import "./index.css";
 import { loadHeader, logoTxt } from "./header/header";
 import { loadMain } from "./main/main";
 import { removeClassOnSmallScreen, loadSide } from "./side/side";
+import { loadEditLabels } from "./main/edit-labels/edit_labels";
 function loadApp() {
   initializeArray();
   initializemodalState();
+  loadEditLabels(getmodalStateFromLocalStorage());
   loadHeader();
   loadMain();
   loadSide();
