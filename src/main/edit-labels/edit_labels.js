@@ -229,13 +229,21 @@ export function loadEditLabels(bool) {
 
       const body = document.querySelector("body");
       body.append(modal, overlay);
+      modalState = true;
+      updatemodalStateInLocalStorage(modalState);
       overlay.addEventListener("click", () => {
         body.removeChild(modal);
         body.removeChild(overlay);
+
+        modalState = false;
+        updatemodalStateInLocalStorage(modalState);
       });
       DoneBtn.addEventListener("click", () => {
         body.removeChild(modal);
         body.removeChild(overlay);
+
+        modalState = false;
+        updatemodalStateInLocalStorage(modalState);
       });
     }
 
