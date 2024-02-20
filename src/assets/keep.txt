@@ -1,0 +1,49 @@
+so what are the components of the keep app:
+	header
+		toggle menu
+		logo	
+			keep svg
+			header text
+		search	
+			search svg
+			search input	
+		additional buttons
+			refresh
+			grid 
+			gear icon (setting)
+	side bar
+		notes
+		reminders
+		labels
+		edit labels
+		Archive
+		Trash
+	main
+	    notes:
+		take_a_note
+		notes	
+			pinned 
+			not-pinned 	
+	    reminders
+		take_a_note
+		notes (but with specified date with tomorrow by default)
+			pinned 
+			not-pinned
+	    labels	
+		(the same as regular notes but only with sorted notes)
+	    edit-labels 
+		(a list of all the labels)
+		label	
+			edit-labels__title 
+			delete option svg
+			input (with the name of the label as the default value)
+			rename option svg
+			Done (save option)
+	    Archive 
+	    Trash
+		"notes in trash are deleted in 7 days"
+		empty trash option
+		deleted notes 
+
+
+
