@@ -1,0 +1,237 @@
+main > div:first-child {
+  width: 100%;
+  padding: 32px 0 16px 0;
+}
+
+.take-note,
+.take-note--active {
+  color: var(--light-grey);
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+  display: flex;
+  background-color: #202124;
+  -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 1),
+    inset 0 -1px 0 rgba(0, 0, 0, 1);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 1), inset 0 -1px 0 rgba(0, 0, 0, 1);
+}
+.take-note {
+  padding-right: 4px;
+}
+.take-note > div:first-child {
+  flex: calc(100% - 92px);
+}
+.take-note > div:first-child > input {
+  height: 100%;
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.take-note input::placeholder {
+  color: var(--light-grey);
+}
+.take-note > div:not(:first-child) {
+  flex: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.take-note > div:not(:first-child):hover {
+  background-color: var(--header-svg-hover);
+}
+
+@media (max-width: 680px) {
+  .take-note,
+  .take-note--active {
+    width: 100%;
+  }
+}
+
+/* ============================================= */
+.take-note--active {
+  flex-direction: column;
+}
+
+main .top,
+.take-note--active .middle,
+main .botto {
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--light-grey);
+
+  width: 100%;
+}
+main .top {
+  min-height: 48px;
+  position: relative;
+}
+main .top div:first-child {
+  flex: calc(100% - 48px);
+  height: 100%;
+}
+
+main .top div:first-child div {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 15px 15px 5px 15px;
+  font-size: 16px;
+}
+
+main .top div:not(:first-child) {
+  flex: 48px;
+
+  width: 48px;
+  height: 48px;
+}
+
+main .top div:nth-child(2) div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  margin: auto;
+  position: relative;
+  top: 6px;
+  border-radius: 50%;
+}
+main .top div:nth-child(2) div:hover {
+  background-color: var(--header-svg-hover);
+  cursor: pointer;
+}
+
+main .top div:nth-child(2) div:hover svg path {
+  fill: white;
+}
+main .top div:nth-child(2) div,
+main .top div:nth-child(2) div svg path {
+  transition: all 0.5s ease;
+}
+main .top div:nth-child(2) div:hover,
+main .top div:nth-child(2) div:hover svg path {
+  transition: all 0.5s ease;
+}
+.take-note--active .middle {
+  min-height: 46px;
+  position: relative;
+}
+
+.placeholder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+  /* display: none; */
+}
+.mainInput {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.mainInput,
+main .top .mainInput .middle .mainInput {
+  resize: vertical;
+  color: var(--off-white);
+}
+main .top .mainInput {
+  font-size: 16px;
+  resize: vertical;
+  padding: 5px;
+  color: var(--off-white);
+}
+.take-note--active .middle div {
+  min-width: 100%;
+  min-height: 100%;
+}
+.take-note--active .middle div div {
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 12px 16px;
+}
+
+.placeholder {
+  letter-spacing: 0.01785714em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  padding-top: 12px;
+}
+
+main .bottom {
+  height: 44px;
+}
+main .bottom > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 4px 0;
+  padding-right: 15px;
+}
+
+main .bottom > div > div:first-child {
+  flex: calc(100% - 86px);
+  display: flex;
+  align-items: center;
+}
+main .bottom > div > div:first-child > div {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
+
+main .bottom > div > div:first-child > div:hover {
+  cursor: pointer;
+  background-color: var(--header-svg-hover);
+}
+main .bottom > div > div:first-child > div:hover svg path {
+  fill: white;
+}
+main .bottom > div > div:not(:first-child) {
+  flex: 86px;
+}
+
+main .bottom svg {
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 530px) {
+  main .bottom > div {
+    flex-direction: column;
+    height: 70px;
+  }
+
+  .buttom > div > div:first-child {
+    flex: calc(100% - 36px);
+  }
+
+  main .bottom > div > div:not(:first-child) {
+    flex: 36px;
+  }
+  main .bottom > div > div:not(:first-child) {
+    margin-left: auto;
+  }
+}

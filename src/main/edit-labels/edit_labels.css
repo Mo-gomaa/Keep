@@ -1,0 +1,132 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  background-color: #313235;
+  color: white;
+  width: 300px;
+  transform: translate(-50%, -50%) scale(1);
+  display: flex;
+  flex-direction: column;
+
+  border: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
+}
+
+.overlay {
+  left: 0;
+  position: fixed;
+  top: 0;
+  background: rgba(10, 10, 10, 0.6);
+  opacity: 0.75 !important;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+}
+.modal__top {
+  width: 100%;
+  padding: 15px;
+}
+
+.modal__top > span {
+  height: 25px;
+  font-size: 16px;
+  display: block;
+}
+.label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  height: 45px;
+}
+.modal__inputContainer {
+  width: 188px;
+  position: relative;
+}
+.modal__input {
+  width: 188px;
+  outline: none;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 auto;
+  border: none;
+  color: var(--off-white);
+  font-weight: bolder;
+}
+.modal__inputContainer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 3px);
+  height: 1px;
+  background-color: var(--light-grey);
+  transition: transform 50ms ease-in-out;
+  z-index: 11;
+  transform: scaleX(0);
+}
+.modal__inputContainer.focused::before,
+.modal__inputContainer.focused::before,
+.modal__inputContainer:hover::before,
+.modal__inputContainer:focus::before {
+  transform: scaleX(1);
+  transition: transform 50ms ease-in-out;
+}
+
+.modal__input::placeholder {
+  color: var(--light-grey);
+}
+.label div:nth-child(1),
+.label div:nth-child(3) {
+  width: 24px;
+  height: 24px;
+}
+.label div:nth-child(1),
+.label div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label:nth-child(2) div:nth-child(3) {
+  visibility: hidden;
+}
+
+.label div:nth-child(1) svg,
+.label div:nth-child(3) svg {
+  width: 20px;
+  height: 20px;
+}
+.label div:nth-child(1):focus,
+.label div:nth-child(1):hover,
+.label div:nth-child(3):hover,
+.label div:nth-child(3):focus {
+  border-radius: 50%;
+  opacity: 0.87;
+  background-color: rgba(154, 160, 166, 0.157);
+  transition: background-color 0.1s ease;
+}
+
+.label div:nth-child(1):focus svg path,
+.label div:nth-child(1):hover svg path,
+.label div:nth-child(3):hover svg path,
+.label div:nth-child(3):focus svg path {
+  fill: white;
+  transition: background-color 0.1s ease;
+}
+
+.modal__bottom {
+  padding: 15px 10px;
+  border-top: 1px solid var(--grey);
+}
+.modal__bottom button {
+  margin-left: auto;
+  float: right;
+}
+.block:nth-child(2) > div:nth-child(3) {
+  visibility: visible;
+}

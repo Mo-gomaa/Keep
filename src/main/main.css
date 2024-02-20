@@ -1,0 +1,19 @@
+@import "./notes/notes.css";
+@import "./reminders/reminders.css";
+@import "./labels/labels.css";
+@import "./edit-labels/edit_labels.css";
+@import "./archive/archive.css";
+@import "./trash/trash.css";
+
+main {
+  width: 100%;
+  height: 100%;
+  padding-top: 64px;
+  padding-left: 80px;
+  transition: padding 0.1s ease;
+}
+
+main.minimize {
+  padding-left: 280px;
+  transition: padding 0.1s ease;
+}
