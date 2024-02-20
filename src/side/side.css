@@ -1,0 +1,112 @@
+.side {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  padding-top: 8px;
+  width: 80px;
+  background-color: var(--body-bg);
+  z-index: 1;
+  overflow: scroll;
+  height: calc(100vh - 64px);
+  font-family: "Google Sans";
+}
+
+.side__feature {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 46px;
+
+  border-radius: 0 25px 25px 0;
+}
+
+.side__feature:hover {
+  cursor: pointer;
+}
+
+.side__feature.active .side__feature--Icon {
+  background-color: var(--active-feature);
+}
+.side__feature.active svg path {
+  fill: white;
+}
+
+.side__feature > div:first-child {
+  flex: 80px;
+  padding-left: 12px;
+  width: 46px;
+  height: 46px;
+}
+
+.side__feature--Icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.side__feature > div:nth-child(2) {
+  flex: 0px;
+  overflow: hidden;
+}
+
+.side__feature--txt {
+  color: transparent;
+  letter-spacing: 0.01785714em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  width: 0;
+  transition: width 0.001s ease;
+  display: inline-block;
+}
+
+.side__feature--Icon:hover {
+  background-color: var(--header-svg-hover);
+}
+
+.side.open {
+  width: 280px;
+  transition: width 0.01s ease;
+}
+
+.side.open .side__feature > div:nth-child(2) {
+  flex: 200px;
+  width: 200px;
+  transition: width 0.01s ease;
+}
+
+.side.open .side__feature--txt {
+  width: 100%;
+}
+
+.side.open .side__feature--txt {
+  color: #e8eaed;
+}
+.side.open .side__feature.active .side__feature--Icon,
+.side.open .side__feature--Icon:hover {
+  background-color: transparent;
+}
+
+.side.open .side__feature.active,
+.side.open .side__feature.active:hover {
+  background-color: var(--active-feature);
+}
+
+.side.open .side__feature:focus {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.side.open .side__feature:hover {
+  background-color: var(--header-svg-hover);
+}
+
+.side [data-tool-tip]::before {
+  z-index: 1;
+}
+.side [data-tool-tip]:hover::before {
+  visibility: none;
+  opacity: 0;
+}
